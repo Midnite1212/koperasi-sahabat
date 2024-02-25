@@ -5,7 +5,7 @@ import ArrowRight from '@/public/img/arrow-right.svg'
 import Burguer from '@/public/img/burguer.svg'
 import Clock from '@/public/img/clock.svg'
 import CloseIcon from '@/public/img/close-icon.svg'
-import LogoCalendar from '@/public/img/mi-calendar.svg'
+import LogoCalendar from '@/public/img/sahabat.svg'
 import Profile from '@/public/img/profile.svg'
 import Search from '@/public/img/search.svg'
 
