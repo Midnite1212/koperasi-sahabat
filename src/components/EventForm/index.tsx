@@ -19,7 +19,7 @@ export const EventForm = ({ event }: IEventForm) => {
   const { events, updateEventStorage, removeEventStorage, saveEventStorage } =
     useEventsContext()
   const { setModal } = useStateContext()
-  const { register, handleSubmit, getValues, setValue } = useForm<IEvents>()
+  const { register, handleSubmit, setValue } = useForm<IEvents>()
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedStartTime, setSelectedStartTime] = useState('')
   const [selectedEndTime, setSelectedEndTime] = useState('')
