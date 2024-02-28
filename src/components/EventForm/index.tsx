@@ -20,7 +20,6 @@ export const EventForm = ({ event }: IEventForm) => {
     useEventsContext()
   const { setModal } = useStateContext()
   const { register, handleSubmit, getValues, setValue } = useForm<IEvents>()
-  const formValues = getValues();
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedStartTime, setSelectedStartTime] = useState('')
   const [selectedEndTime, setSelectedEndTime] = useState('')
@@ -51,10 +50,10 @@ export const EventForm = ({ event }: IEventForm) => {
   )
 
   const isCrahedTime = () => {
-    const startHour = Number(formValues.startDate?.split(':')[0]);
-    const startMinute = Number(formValues.startDate?.split(':')[1]);
-    const endHour = Number(formValues.endDate?.split(':')[0]);
-    const endMinute = Number(formValues.endDate?.split(':')[1]);
+    const startHour = Number(selectedStartTime?.split(':')[0]);
+    const startMinute = Number(selectedStartTime?.split(':')[1]);
+    const endHour = Number(selectedEndTime?.split(':')[0]);
+    const endMinute = Number(selectedEndTime?.split(':')[1]);
     // Get the disabled time for the selected dates
     const filterDisabledTimeRanges: TimeRange[] = disabledTimeRanges.filter((timeRange) => {
       const startDate = timeRange.start
@@ -70,7 +69,7 @@ export const EventForm = ({ event }: IEventForm) => {
       const { start, end } = timeRange
       const disabledStart = start.getHours() * 60 + start.getMinutes()
       const disabledEnd = end.getHours() * 60 + end.getMinutes()
-      // console.log(disabledStart, disabledEnd, startTime, endTime)
+      console.log(disabledStart, disabledEnd, startTime, endTime)
       // Case1: start time is between disabled range
       if (startTime >= disabledStart && startTime <= disabledEnd) return true
       // Case2: end time is between disabled range
